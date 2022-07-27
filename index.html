@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/cropper.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="placeCropper">
+</div>
+<div id="placeCropper2">
+</div>
+</body>
+<script src="./js/cropper.min.js"></script>
+<script src="./js/cropper.main.js"></script>
+<script>
+    const cropper = new CropperCreator();
+    const cropper2 = new CropperCreator();
+    cropper.Create("عکس کارخانه" , "placeCropper");
+    cropper2.Create("عکس کارخانه" , "placeCropper2");
+</script>
+</html>
