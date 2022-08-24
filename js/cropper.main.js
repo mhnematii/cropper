@@ -5,13 +5,11 @@ class CropperCreator {
 
     Create = (title, cropperPlaceId) => {
         this.PlaceId = cropperPlaceId;
-        const uploadInput = `<label for="${cropperPlaceId}SelectImage">انتخاب عکس</label>`
+        const uploadInput = `<label class="select-picture" for="${cropperPlaceId}SelectImage">انتخاب عکس</label>`
             + `<input id="${cropperPlaceId}SelectImage" data-for="${cropperPlaceId}Modal" type="file" hidden/>`;
-        const cardContent = "<div class='cropper-card'>"
-            + `<div><img src='' id='${cropperPlaceId}PreviewCroppedImage' width='250' alt='preview'></div>`
-            + `<div class='cropper-card-title'>${title}</div>`
-            + `<div class='cropper-card-body'>${uploadInput}</div>`
-            + `</div>`;
+        const cardContent = `<div class='cropper-card-title'>${title}</div>`
+            +`<div class="export-box"><img src='' id='${cropperPlaceId}PreviewCroppedImage' alt='preview'></div>`
+            + `<div class='cropper-card-footer'>${uploadInput}</div>`;
         const modal = `<div id=\"${cropperPlaceId}Modal\" open="false" class=\"modal\">`
             + `<div id="${cropperPlaceId}ModalContent" class="modal-content row">`
             + `<div class="w-30 display-flex"><span class="close">&times;</span>`
@@ -29,7 +27,7 @@ class CropperCreator {
         this.Image = img;
         const cropBoxPlace = document.getElementById(`${cropperPlaceId}cropBoxPlace`);
         cropBoxPlace.insertAdjacentElement('beforeend', img);
-        card.classList.add("cropperCard");
+        card.classList.add("cropper-card");
         card.insertAdjacentHTML("beforeend", cardContent);
         place.appendChild(card);
         document.getElementById(`${cropperPlaceId}SelectImage`).addEventListener("change", this.OpenModal);

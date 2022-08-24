@@ -9,17 +9,17 @@
     </style>
 </head>
 <body>
-<div id="placeCropper">
+<div id="placeCropper" style="display: flex; ;flex-wrap: wrap;width: 15%">
 </div>
-<div id="placeCropper2">
+<div id="placeCropper2" style="display: flex; ;flex-wrap: wrap;width: 15%">
 </div>
 </body>
 <script src="./js/cropper.min.js"></script>
 <script src="./js/cropper.main.js"></script>
 <script>
     const cropper = new CropperCreator();
-    const cropper2 = new CropperCreator();
     cropper.Create("عکس کارخانه" , "placeCropper");
-    cropper2.Create("عکس کارخانه" , "placeCropper2");
+    const cropper2 = new CropperCreator();
+    cropper2.Create("عکس خیابان" , "placeCropper2");
 </script>
 </html>
