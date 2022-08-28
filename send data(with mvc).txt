@@ -1,0 +1,17 @@
+send data cropper whitout ajax :)
+
+//fetching picture
+let blob = await fetch(image url).then(r => r.blob());
+
+// create url object
+url = URL.createObjectURL(blob)
+
+// create file from picture
+let file = new File([url], "img.jpg",{type:"image/jpeg", lastModified:new Date().getTime()});
+let container = new DataTransfer();
+
+//add file to container
+container.items.add(file);
+
+// add file to input(type=file)
+input.files = container.files;
